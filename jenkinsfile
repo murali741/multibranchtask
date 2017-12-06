@@ -1,6 +1,16 @@
 #!/usr/bin/env groovy
 properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/murali741/multibranchtask.git/'], pipelineTriggers([githubPush()])])
 
+properties([
+  pipelineTriggers([
+    upstream(
+      threshold: 'SUCCESS',
+      upstreamProjects: '../multi/master'
+    )
+  ])
+])
+
+
 
 pipeline {
     agent any 
