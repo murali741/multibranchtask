@@ -7,6 +7,10 @@ properties([
       threshold: 'FAILURE',
       upstreamProjects: '../multi/branchone'
     )
+    downstream(
+      threshold: 'FAILURE',
+      upstreamProjects: '../multi/master'
+    )
   ])
 ])
 
