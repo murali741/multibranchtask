@@ -4,7 +4,7 @@ properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'h
 properties([
   pipelineTriggers([
     upstream(
-      threshold: 'SUCCESS',
+      threshold: 'FAILURE',
       upstreamProjects: '../multi/master'
     )
   ])
