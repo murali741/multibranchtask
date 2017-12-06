@@ -2,6 +2,16 @@
 properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/murali741/multibranchtask.git/'], pipelineTriggers([githubPush()])])
 
 
+properties([
+  pipelineTriggers([
+    upstream(
+      threshold: 'FAILURE',
+      upstreamProjects: '../multi/master'
+      upstreamProjects: '../multi/branchone'
+    )
+  ])
+])
+
 
 pipeline {
     agent any 
