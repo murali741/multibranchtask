@@ -2,7 +2,7 @@
 properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/murali741/multibranchtask.git/'], pipelineTriggers([githubPush()])])
 
 triggers {
-  upstream(upstreamProjects: "multi/branchsecond", threshold: hudson.model.Result.SUCCESS)
+  upstream(upstreamProjects: "../multi/branchsecond", threshold: hudson.model.Result.SUCCESS)
 }
 pipeline {
     agent any 
