@@ -1,11 +1,7 @@
 #!/usr/bin/env groovy
 properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/murali741/multibranchtask.git/'], pipelineTriggers([githubPush()])])
 
-post
-node(master){
-build job: 'branchone'
-}
-
+properties([pipelineTriggers([upstream(threshold: hudson.model.Result.SUCCESS, upstreamProjects: '../multi/branchsecond')])])
 pipeline {
     agent any 
 
