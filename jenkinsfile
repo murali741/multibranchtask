@@ -20,7 +20,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 sh 'pwd' 
-                echo "done by nikhil"
+                echo "done by Murlai"
             }
         }
         stage('Test'){
