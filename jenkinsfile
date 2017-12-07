@@ -5,6 +5,9 @@ properties([
     projectUrlStr: 'https://github.com/murali741/multibranchtask.git/'],
     pipelineTriggers([githubPush()])])
 
+properties([pipelineTriggers([upstream('master')])])
+
+
 pipeline {
     agent any 
 
