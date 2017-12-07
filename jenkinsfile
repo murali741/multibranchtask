@@ -1,10 +1,17 @@
+#!/usr/bin/env groovy
+properties([
+    [$class: 'GithubProjectProperty',
+    displayName: '',
+    projectUrlStr: 'https://github.com/VeridicSolutions99/Veridic_Atlanta.git/'],
+    pipelineTriggers([githubPush()])])
+
 pipeline {
-    agent any
-    
+    agent any 
+
     stages {
-        stage('Build') {
-            steps {
-                    parameters {
+        stage('Build') { 
+            steps { 
+                      parameters {
                             string(defaultValue: "TEST", description: 'What environment?', name: 'userFlag')
                             // choices are newline separated
                             choice(choices: 'REBUILD DATABASE\nDEPLOY', description: 'What is your choice', name: 'region')
@@ -12,5 +19,6 @@ pipeline {
                          }
             }
         }
+      
     }
 }
