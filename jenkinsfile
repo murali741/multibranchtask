@@ -1,7 +1,8 @@
 #!/usr/bin/env groovy
 properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/murali741/multibranchtask.git/'], pipelineTriggers([githubPush()])])
 
-properties([pipelineTriggers([upstream(threshold: 'UNSTABLE', upstreamProjects: 'branchone, ')])])
+properties([pipelineTriggers([upstream(threshold: 'FAILURE', upstreamProjects: 'branchone, ')])])
+
 
 pipeline {
     agent any 
