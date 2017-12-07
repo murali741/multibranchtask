@@ -2,7 +2,7 @@
 properties([
     [$class: 'GithubProjectProperty',
     displayName: '',
-    projectUrlStr: 'https://github.com/murali741/multibranchtask/'],
+    projectUrlStr: 'https://github.com/murali741/multibranchtask.git/'],
     pipelineTriggers([githubPush()])])
 
 pipeline {
