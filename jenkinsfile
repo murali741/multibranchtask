@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/murali741/multibranchtask.git/'], pipelineTriggers([githubPush()])])
 
-properties([pipelineTriggers([upstream(threshold: 'FAILURE', upstreamProjects: 'branchone, ')])])
+properties([pipelineTriggers([upstream(threshold: 'FAILURE', upstreamProjects: "multi/" + env.BRANCH_NAME.replaceAll("/", "%2F"))])])
 
 
 pipeline {
